@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boom Fabrication & Performance | Dyno Tuning, Builds & Fabrication in Albuquerque, NM</title>
+<meta name="description" content="GM and Ford dyno tuning, performance installs, full builds and fabrication in Albuquerque, NM. Street, track and race. Book a dyno session today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#111519;--carbon:#1b2129;--white:#eef1f4;--red:#ff7a00;--ash:#8a949e;--line:#2b333d;
+  --display:'Barlow Condensed',Impact,sans-serif;--body:'Barlow',Arial,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:var(--body);background:var(--black);color:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.92;text-transform:uppercase;letter-spacing:-.01em}
+h2{font-size:clamp(44px,7vw,88px);font-style:italic}
+h3{font-size:clamp(26px,3vw,34px)}
+.wrap{padding-left:var(--pad);padding-right:var(--pad);max-width:1400px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-style:italic;font-size:22px;text-transform:uppercase;text-decoration:none;padding:14px 28px 12px;background:var(--red);color:#111519;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .15s}
+.btn:hover{background:#ff9633}
+.btn.ghost{background:var(--white);color:var(--black)}
+.btn.ghost:hover{background:#fff}
+
+/* stripe band – the one recurring livery mark */
+.band{height:14px;background:repeating-linear-gradient(-55deg,var(--red) 0 22px,var(--black) 22px 30px,#c3ccd5 30px 44px,var(--black) 44px 52px)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:var(--black);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--display);font-weight:900;font-style:italic;font-size:26px;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo span{color:var(--red)}
+.links{display:flex;gap:28px;list-style:none;font-family:var(--display);font-weight:600;font-size:19px;text-transform:uppercase}
+.links a{text-decoration:none;color:var(--ash)}
+.links a:hover,.links a[aria-current]{color:var(--white)}
+.call{font-family:var(--display);font-weight:800;font-size:19px;text-decoration:none;padding:10px 18px;background:var(--red);color:#111519}
+.burger{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+@media(max-width:900px){
+  .links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--black);flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .links li a{display:block;padding:16px var(--pad);border-top:1px solid var(--line);font-size:24px}
+  .burger{display:block}.call{display:none}
+}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 68px);display:grid;align-items:center;overflow:hidden;
+  background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.85)),
+  repeating-linear-gradient(90deg,#1a2028 0 2px,#111519 2px 6px);}
+.hero .wrap{position:relative;z-index:2;padding-bottom:48px;padding-top:48px;width:100%}
+.hero h1{font-size:clamp(56px,10vw,150px);font-style:italic;font-weight:900;max-width:14ch}
+.hero h1 em{font-style:inherit;color:var(--red)}
+.hero p{max-width:52ch;font-size:clamp(17px,1.6vw,21px);color:#c9c9c4;margin:18px 0 28px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-photo{position:absolute;inset:0;background-size:cover;background-position:center 55%;background-image:url('images/26-hero-69-camaro-desktop.jpg')}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,21,25,.9) 0%,rgba(17,21,25,.55) 42%,rgba(17,21,25,.1) 75%),linear-gradient(0deg,rgba(17,21,25,.7) 0%,transparent 35%)}
+.rule{display:flex;flex-wrap:wrap;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:18px;background:var(--red);color:#111519}
+.rule a{flex:1 1 auto;text-align:center;text-decoration:none;padding:12px 24px;border-right:2px solid rgba(0,0,0,.35);transition:background .15s,color .15s}
+.rule a:last-child{border-right:0}
+.rule a:hover{background:#111519;color:var(--red)}
+@media(max-width:700px){.rule a{flex:1 1 50%;border-bottom:2px solid rgba(0,0,0,.35)}}
+
+/* sections */
+section{padding:clamp(72px,10vw,140px) 0}
+.kicker{font-family:var(--display);font-weight:600;font-size:20px;color:var(--red);text-transform:uppercase;margin-bottom:14px}
+.lead{max-width:60ch;color:#c9c9c4;font-size:18px;margin-top:18px}
+
+/* services */
+.services{background:var(--white);color:var(--black)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--black);margin-top:48px}
+.svc{background:var(--white);padding:32px 28px 34px;display:flex;flex-direction:column;gap:12px;min-height:300px}
+.svc h3{font-style:italic}
+.svc p{color:#3d4650;max-width:34ch}
+.svc ul{list-style:none;margin-top:auto;font-weight:600;font-size:15px;display:grid;gap:6px}
+.svc ul li::before{content:"";display:inline-block;width:14px;height:3px;background:var(--red);margin-right:10px;vertical-align:middle}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}}
+
+/* dyno */
+.dyno{background:var(--carbon)}
+.dyno .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;margin-top:40px}
+.dyno table{width:100%;border-collapse:collapse;font-family:var(--display);font-size:24px;text-transform:uppercase}
+.dyno td{padding:16px 0;border-bottom:1px solid var(--line)}
+.dyno td:last-child{text-align:right;color:var(--red);font-weight:800}
+.ph{aspect-ratio:4/3;background:repeating-linear-gradient(-55deg,#242c36 0 18px,#1b2129 18px 36px);border:1px solid var(--line);display:grid;place-items:center;color:var(--ash);font-family:var(--display);font-size:20px;text-transform:uppercase;text-align:center;padding:20px}
+@media(max-width:900px){.dyno .cols{grid-template-columns:1fr;gap:32px}}
+
+/* shop */
+.shop .row{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.prod{background:var(--carbon);border:1px solid var(--line);display:flex;flex-direction:column}
+.prod .ph{aspect-ratio:1;border:0;border-bottom:1px solid var(--line)}
+.prod .info{padding:18px 18px 22px;display:grid;gap:8px}
+.prod .name{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1}
+.prod .price{color:var(--red);font-family:var(--display);font-weight:800;font-size:24px}
+.prod .tag{font-size:13px;color:var(--ash);font-weight:600}
+.prod a{text-decoration:none;font-family:var(--display);font-weight:800;font-size:18px;text-transform:uppercase;border:2px solid var(--white);padding:8px 14px;text-align:center;margin-top:6px}
+.prod a:hover{background:var(--white);color:var(--black)}
+@media(max-width:1000px){.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.products{grid-template-columns:1fr}}
+
+/* builds */
+.builds{padding:0;background:var(--black)}
+.builds .wrap{padding-top:clamp(72px,10vw,140px)}
+.masonry{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:6px;margin-top:44px;padding:0 6px 6px}
+.masonry .ph{aspect-ratio:auto;height:100%}
+.masonry .ph:nth-child(1){grid-column:span 2;grid-row:span 2}
+.masonry .ph:nth-child(4){grid-row:span 2}
+.masonry .ph:nth-child(6){grid-column:span 2}
+@media(max-width:800px){.masonry{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}.masonry .ph:nth-child(6){grid-column:span 2}}
+
+/* about */
+.about{background:var(--white);color:var(--black)}
+.about .cols{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about p{font-size:18px;color:#2c343c;max-width:52ch;margin-top:18px}
+.about .ph{background:repeating-linear-gradient(-55deg,#dfe4e9 0 18px,#d3d9df 18px 36px);border-color:#bcc4cc;color:#6b757f}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:36px;border-top:3px solid var(--black)}
+.stats div{padding:18px 0;font-family:var(--display);text-transform:uppercase;line-height:1}
+.stats b{display:block;font-size:44px;font-weight:900;font-style:italic;color:var(--red)}
+.stats small{font-size:15px;font-weight:600;color:#5c6670}
+@media(max-width:900px){.about .cols{grid-template-columns:1fr}}
+
+/* contact */
+.contact .cols{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:40px}
+.contact dl{display:grid;grid-template-columns:120px 1fr;gap:12px 20px;font-size:18px}
+.contact dt{font-family:var(--display);font-weight:800;text-transform:uppercase;color:var(--red);font-size:20px}
+.contact dd a{text-decoration:none;font-weight:600}
+.contact dd a:hover{color:var(--red)}
+.map{border:0;width:100%;height:100%;min-height:320px;filter:grayscale(1) contrast(1.1)}
+@media(max-width:900px){.contact .cols{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ash);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer a{color:var(--white);text-decoration:none;margin-left:18px;font-weight:600}
+
+.view{display:none}.view.active{display:block}
+.quick{background:var(--white);color:var(--black);padding:clamp(48px,7vw,90px) 0}
+.tabs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--black)}
+.tabs-grid a{background:var(--white);padding:28px 26px 30px;text-decoration:none;display:grid;gap:8px;border-left:6px solid transparent;transition:border-color .15s,background .15s}
+.tabs-grid a:hover{border-left-color:var(--red);background:#fff}
+.tabs-grid h3{font-style:italic}
+.tabs-grid p{color:#3d4650;font-size:15px}
+@media(max-width:800px){.tabs-grid{grid-template-columns:1fr}}
+.links a[aria-current]{color:var(--red)}
+
+/* dealers */
+.dealers .row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.brands{margin-top:48px;display:grid;gap:10px}
+.brand{background:var(--carbon);border:1px solid var(--line);border-left:6px solid var(--red)}
+.brand{display:flex;align-items:center;gap:20px;padding:26px 28px}
+.brand summary::-webkit-details-marker{display:none}
+.brand .bname{font-family:var(--display);font-weight:800;font-style:italic;font-size:clamp(26px,3vw,36px);text-transform:uppercase;line-height:1}
+.brand .btag{color:var(--ash);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin-right:auto}
+.brand .chev{width:14px;height:14px;border-right:3px solid var(--red);border-bottom:3px solid var(--red);transform:rotate(45deg);transition:transform .15s;flex:none}
+.brand[open] .chev{transform:rotate(-135deg)}
+.brand summary:hover{background:#222a34}
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border-top:1px solid var(--line)}
+.item{background:var(--black);display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px}
+.item .ph{aspect-ratio:1;border:0}
+.item .info{display:grid;gap:6px;align-content:start}
+.item .name{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1}
+.item .desc{font-size:14px;color:var(--ash)}
+.item .price{color:var(--red);font-family:var(--display);font-weight:800;font-size:22px}
+.item a{text-decoration:none;font-family:var(--display);font-weight:800;font-size:17px;text-transform:uppercase;border:2px solid var(--white);padding:6px 12px;text-align:center;justify-self:start;margin-top:4px}
+.item a:hover{background:var(--white);color:var(--black)}
+@media(max-width:1100px){.items{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.dealers .row{grid-template-columns:1fr}}
+@media(max-width:640px){.items{grid-template-columns:1fr}.item{grid-template-columns:90px 1fr}}
+.dyno-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line)}
+.logo,.call{white-space:nowrap}
+@media(max-width:1280px){.logo{font-size:22px}.links{gap:18px;font-size:17px}.call{font-size:17px;padding:8px 14px}}
+.prod-img{width:100%;aspect-ratio:1;object-fit:contain;background:var(--carbon);padding:10px;border-bottom:1px solid var(--line)}
+.about-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.map-link{position:relative;display:block;border:1px solid var(--line);overflow:hidden}
+.map-img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block}
+.map-cta{position:absolute;left:16px;bottom:16px;font-family:var(--display);font-weight:800;font-style:italic;font-size:20px;text-transform:uppercase;background:var(--red);color:#111519;padding:10px 20px 8px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.map-link:hover .map-cta{background:#ff9633}
+.build-img{width:100%;height:100%;object-fit:cover;display:block}
+.masonry .build-img:nth-child(1){grid-column:span 2;grid-row:span 2}
+.masonry .build-img:nth-child(4){grid-row:span 2}
+.masonry .build-img:nth-child(6){grid-column:span 2}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:44px;padding:0 6px 6px;grid-auto-flow:dense}
+.g-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.g-img:first-child{grid-column:span 2;grid-row:span 2;height:100%}
+@media(max-width:800px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.gallery{grid-template-columns:1fr}.g-img:first-child{grid-column:auto;grid-row:auto}}
+
+/* ---- mobile ---- */
+.mbar{display:none}
+.contact dd a{overflow-wrap:anywhere}
+@media(max-width:900px){
+  .brand{flex-wrap:wrap;gap:6px 16px;padding:20px 22px}
+  .brand .bname{flex:1 1 100%}
+  .brand .btag{margin-right:0}
+}
+@media(max-width:600px){
+  .logo{font-size:19px;gap:6px}
+  nav.wrap{height:60px}
+  .links{top:60px}
+  .hero{min-height:calc(100svh - 60px - 60px)}
+  .hero .wrap{padding-top:32px;padding-bottom:32px}
+  .hero .cta .btn{flex:1 1 100%;justify-content:center}
+  h2{font-size:clamp(40px,11vw,56px)}
+  section{padding:56px 0}
+  .contact dl{grid-template-columns:1fr;gap:4px}
+  .contact dt{margin-top:14px}
+  .contact dd[style]{grid-column:auto!important;margin-top:20px!important}
+  .contact .btn{width:100%;justify-content:center}
+  .dyno table{font-size:20px}
+  .dyno td{padding:14px 0}
+  .gallery{grid-template-columns:repeat(2,1fr)!important;gap:4px;padding:0 4px 4px}
+  .g-img:first-child{grid-column:span 2!important;grid-row:auto!important;height:auto}
+  .stats b{font-size:36px}
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--black);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+  .mbar a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-family:var(--display);font-weight:800;font-style:italic;font-size:18px;text-transform:uppercase;color:var(--white);border-right:1px solid var(--line)}
+  .mbar a:first-child{background:var(--red);color:#111519}
+  .mbar a:last-child{border-right:0}
+  body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+}
+@media(max-width:600px){
+  .hero{align-items:end}
+  .hero-photo{background-image:url('images/27-hero-69-camaro-mobile.jpg');background-size:100% auto;background-position:center top;background-repeat:no-repeat}
+  .hero-photo::after{background:linear-gradient(180deg,rgba(17,21,25,0) 0%,rgba(17,21,25,0) 22%,rgba(17,21,25,.9) 58vw,var(--black) 66vw)}
+}
+@media(min-width:901px){
+  .hero{background:var(--black)}
+  .logo{margin-right:28px}
+  .hero-photo{left:32%;background-position:center 55%}
+  .hero-photo::after{background:linear-gradient(90deg,var(--black) 0%,rgba(17,21,25,.55) 18%,rgba(17,21,25,0) 45%),linear-gradient(0deg,rgba(17,21,25,.65) 0%,transparent 30%)}
+  .hero h1{font-size:clamp(64px,7.4vw,120px)}
+  .hero .wrap{max-width:1400px}
+  .hero p{max-width:40ch}
+}
+@media(max-width:600px){
+  .hero{align-items:start}
+  .hero .wrap{padding-top:calc(65vw - 6px)!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#home">Boom <span>Fab</span> & Performance</a>
+    <ul class="links" id="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#dyno">Dyno</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#dealers">Dealers</a></li>
+      <li><a href="#builds">Builds</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="call" target="_blank" rel="noopener" href="tel:5054290613">Call 505-429-0613</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" onclick="const l=document.getElementById('links');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+<div class="view" id="home">
+<section class="hero" style="padding:0">
+  <div class="hero-photo" role="img" aria-label="Copper and silver 1969 Camaro SS on the Dynojet at Boom Fabrication &amp; Performance"></div>
+  <div class="wrap">
+    <div class="kicker">Albuquerque, New Mexico</div>
+    <h1>Built to<br>make <em>power.</em></h1>
+    <p>Custom dyno tuning, performance installs, and one-off builds for street cars and race cars. GM and Ford specialists, with select support for other platforms.</p>
+    <div class="cta">
+      <a class="btn" href="#contact">Book a dyno session</a>
+      <a class="btn ghost" href="#builds">See the builds</a>
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+<div class="view" id="services-view"><section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2>Swap it. Boost it.<br>Tune it. Build it.</h2>
+    <p class="lead" style="color:#3d4650">GM and Ford specialists. Engine swaps, forced induction, dyno tuning and fabrication all under one roof, so the car leaves finished and dialed in.</p>
+    <div class="grid3">
+      <div class="svc">
+        <h3>Engine swaps</h3>
+        <p>LS, LT and Coyote swaps into classics, muscle and modern chassis. Mounts, harness, ECU, fuel, cooling and exhaust handled start to finish.</p>
+        <ul><li>LS / LT swaps</li><li>Coyote swaps</li><li>Harness & ECU integration</li><li>Fuel & cooling systems</li></ul>
+      </div>
+      <div class="svc">
+        <h3>Forced induction</h3>
+        <p>Single and twin turbo systems and supercharger installs, built around your power goal and fuel. Fabricated hot side, piping and intercooler, then tuned on the dyno.</p>
+        <ul><li>Turbo & twin-turbo kits</li><li>Supercharger installs</li><li>Custom manifolds & piping</li><li>Fuel system upgrades</li></ul>
+      </div>
+      <div class="svc">
+        <h3>Dyno tuning</h3>
+        <p>Custom calibration on our in-house dyno. Factory ECUs are calibrated with HP Tuners. We also offer Holley EFI and HP Tuners CORE standalone ECU systems for swaps and race builds.</p>
+        <ul><li>Factory ECU tuning via HP Tuners</li><li>Holley EFI systems</li><li>HP Tuners CORE ECU</li><li>Street, track & race tunes</li></ul>
+      </div>
+      <div class="svc">
+        <h3>Custom fabrication</h3>
+        <p>One-off parts built in-house. Turbo manifolds, intercooler piping, engine and trans mounts, brackets, exhaust and roll cages.</p>
+        <ul><li>TIG & MIG welding</li><li>Exhaust & headers</li><li>Roll cages & chassis</li><li>Mounts & brackets</li></ul>
+      </div>
+      <div class="svc">
+        <h3>Diagnostics</h3>
+        <p>Drivability problems, fueling and ignition faults, sensor and wiring issues on modified cars. Data-logged and traced to the root cause, not parts-cannon guessing.</p>
+        <ul><li>Datalog analysis</li><li>Fuel & ignition diagnosis</li><li>Wiring & sensor faults</li><li>Pre-tune inspections</li></ul>
+      </div>
+      <div class="svc">
+        <h3>Full builds</h3>
+        <p>Show-and-go cars from the ground up: race cars that run the number and show cars that take the trophy. Planned, built, tuned and finished here.</p>
+        <ul><li>Drag & race builds</li><li>Show car builds</li><li>Restomod & pro-touring</li><li>Complete drivetrain packages</li></ul>
+      </div>
+    </div>
+    <a class="btn" href="#contact" style="margin-top:40px">Get a quote</a>
+  </div>
+</section>
+</div>
+
+<div class="view" id="dyno-view"><section class="dyno" id="dyno">
+  <div class="wrap">
+    <div class="kicker">The dyno</div>
+    <h2>Rent the dyno.<br>Prove your numbers.</h2>
+    <div class="cols">
+      <div>
+        <p class="lead">Baseline pulls, tuning sessions, or a full day of testing. Bring your own tuner or use ours.</p>
+        <table style="margin-top:28px">
+          <tr><td>Baseline pulls</td><td>$140</td></tr>
+          <tr><td>Hourly dyno rental</td><td>$140 / hr</td></tr>
+          <tr><td>Half-day rental</td><td>$560</td></tr>
+          <tr><td>Full custom tune</td><td>$500 – $1,000</td></tr>
+        </table>
+        <p style="margin-top:14px;font-size:14px;color:var(--ash)">Custom tune pricing does not include ECU licensing fees. Licensing applies to factory ECUs only.</p>
+        <a class="btn" href="#contact" style="margin-top:28px">Reserve dyno time</a>
+      </div>
+      <img class="dyno-photo" src="images/01-yellow-c8-corvette-z06-strapped-down.jpg" alt="Yellow C8 Corvette Z06 strapped down on the Dynojet at Boom Fabrication &amp; Performance" loading="lazy">
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="view" id="shop-view"><section class="shop" id="shop">
+  <div class="wrap">
+    <div class="row">
+      <div><div class="kicker">Shop</div><h2>Tunes & parts</h2></div>
+      <a class="btn ghost" href="#contact">Ask about a part</a>
+    </div>
+    <div class="products">
+      <div class="prod"><img class="prod-img" src="images/02-dynojet-graph-2012-camaro-1-283.jpg" alt="Dynojet graph: 2012 Camaro, 1,283.87 hp and 979.82 lb-ft" loading="lazy"><div class="info"><span class="tag">Tuning</span><span class="name">Custom dyno tune</span><span class="tag" style="color:var(--white)">2012 Camaro: 1,283 hp / 980 lb-ft on our Dynojet</span><span class="price">$500 – $1,000</span><a href="#contact">Get a quote</a></div></div>
+      <div class="prod"><img class="prod-img" style="object-fit:cover;padding:0" src="images/03-factory-exhaust-manifolds-and-cats-next.jpg" alt="Factory exhaust manifolds and cats next to the long-tube headers and high-flow cats replacing them" loading="lazy"><div class="info"><span class="tag">Tuning</span><span class="name">Performance install</span><span class="price">From $—</span><a href="#contact">Get a quote</a></div></div>
+      <div class="prod"><img class="prod-img" style="object-fit:cover;padding:0" src="images/04-boom-fabrication-and-performance-logo.jpg" alt="Boom Fabrication &amp; Performance logo" loading="lazy"><div class="info"><span class="tag">Dyno</span><span class="name">Dyno baseline session</span><span class="price">$—</span><a href="#contact">Book</a></div></div>
+      <div class="prod"><img class="prod-img" style="object-fit:cover;padding:0" src="images/05-tig-welded-stainless-downpipes-with-v.jpg" alt="TIG-welded stainless downpipes with V-band flanges and flex sections, built in-house" loading="lazy"><div class="info"><span class="tag">Fabrication</span><span class="name">Custom fab work</span><span class="price">Quote</span><a href="#contact">Get a quote</a></div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="view" id="dealers-view"><section class="dealers" id="dealers">
+  <div class="wrap">
+    <div class="row">
+      <div><div class="kicker">Authorized dealer</div><h2>Brands we carry</h2></div>
+      <p class="lead" style="margin-top:0">We're an authorized dealer for the parts we install. Order through the shop and get it installed and tuned under one roof, backed by the manufacturer warranty.</p>
+    </div>
+    <div class="brands">
+      <div class="brand"><span class="bname">Texas Speed &amp; Performance</span><span class="btag">LS &amp; LT engine components</span></div>
+      <div class="brand"><span class="bname">Gwatney Performance Innovation</span><span class="btag">Gen V LT &amp; LS performance</span></div>
+      <div class="brand"><span class="bname">HP Tuners</span><span class="btag">Tuning hardware &amp; ECUs</span></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="view" id="builds-view"><section class="builds" id="builds">
+  <div class="wrap">
+    <div class="kicker">Recent work</div>
+    <h2>The builds</h2>
+  </div>
+  <div class="gallery">
+    <img class="g-img" src="images/06-yellow-c8-z06-and-a-gray.jpg" alt="Yellow C8 Z06 and a gray C8 torn down on the lifts" loading="lazy">
+    <img class="g-img" src="images/07-gray-c8-corvette-on-the-dynojet.jpg" alt="Gray C8 Corvette on the Dynojet" loading="lazy">
+    <img class="g-img" src="images/08-yellow-c8-z06-on-the-dynojet.jpg" alt="Yellow C8 Z06 on the Dynojet" loading="lazy">
+    <img class="g-img" src="images/09-gold-1965-mustang-coupe-in-the.jpg" alt="Gold 1965 Mustang coupe in the shop" loading="lazy">
+    <img class="g-img" src="images/10-red-sixth-gen-camaro-zl1-on.jpg" alt="Red sixth-gen Camaro ZL1 on drag wheels" loading="lazy">
+    <img class="g-img" src="images/11-silver-fourth-gen-camaro.jpg" alt="Silver fourth-gen Camaro" loading="lazy">
+    <img class="g-img" src="images/12-turbo-ls-with-btr-intake-in.jpg" alt="Turbo LS with BTR intake in a fourth-gen Camaro" loading="lazy">
+    <img class="g-img" src="images/13-black-1965-mustang-coupe-at-a.jpg" alt="Black 1965 Mustang coupe at a Valero" loading="lazy">
+    <img class="g-img" src="images/14-blue-mazda-rx-7-on-the.jpg" alt="Blue Mazda RX-7 on the Dynojet" loading="lazy">
+    <img class="g-img" src="images/15-green-second-gen-camaro-and-copper.jpg" alt="Green second-gen Camaro and copper 1969 Camaro SS at a car show, hoods up" loading="lazy">
+    <img class="g-img" src="images/16-red-sixth-gen-camaro-on-the.jpg" alt="Red sixth-gen Camaro on the Dynojet" loading="lazy">
+    <img class="g-img" src="images/17-red-fox-body-mustang-5-0.jpg" alt="Red Fox Body Mustang 5.0 convertible with white interior" loading="lazy">
+    <img class="g-img" src="images/18-blue-1967-corvette-coupe-restomod.jpg" alt="Blue 1967 Corvette coupe restomod" loading="lazy">
+    <img class="g-img" src="images/19-lt-swap-with-polished-accessory-drive.jpg" alt="LT swap with polished accessory drive in a 1967 Corvette" loading="lazy">
+    <img class="g-img" src="images/20-green-1970s-camaro-with-red-stripes.jpg" alt="Green 1970s Camaro with red stripes leaving the shop" loading="lazy">
+    <img class="g-img" src="images/21-black-turbo-fifth-gen-camaro-drag.jpg" alt="Black turbo fifth-gen Camaro drag car at the track at night" loading="lazy">
+    <img class="g-img" src="images/22-white-dodge-challenger-hellcat-in-the.jpg" alt="White Dodge Challenger Hellcat in the shop" loading="lazy">
+    <img class="g-img" src="images/23-silver-c5-black-c6-z06-and.jpg" alt="Silver C5, black C6 Z06 and red C7 Z06 Corvettes outside the shop at 201 Sin Nombre Ct" loading="lazy">
+  </div>
+</section>
+</div>
+
+<div class="view" id="about-view"><section class="about" id="about">
+  <div class="wrap cols">
+    <div>
+      <div class="kicker">About the shop</div>
+      <h2>Built for the<br>track and the show.</h2>
+      <p>Boom Fabrication & Performance is a tuning and fabrication shop in Albuquerque. We specialize in GM and Ford platforms, from LS and LT swaps to Coyote and EcoBoost builds, and can help on select other platforms. From reliable street-driven builds to full race cars, tuning, installs and fabrication all happen under one roof, so the car gets finished the way it was drawn up.</p>
+      <div class="stats">
+        <div><b>3</b><small>Drive types on the dyno</small></div>
+        <div><b>1</b><small>Roof for tune, fab & install</small></div>
+        <div><b>2</b><small>Platforms we live on: GM & Ford</small></div>
+      </div>
+    </div>
+    <img class="about-photo" src="images/24-silver-and-copper-1969-camaro-ss.jpg" alt="Silver and copper 1969 Camaro SS next to a black fifth-gen Camaro at a gas station in Albuquerque" loading="lazy">
+  </div>
+</section>
+</div>
+
+<div class="view" id="contact-view"><section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kicker">Get in touch</div>
+    <h2>Book your session</h2>
+    <div class="cols">
+      <dl>
+        <dt>Call</dt><dd><a target="_blank" rel="noopener" href="tel:5054290613">505-429-0613</a></dd>
+        <dt>Email</dt><dd><a target="_blank" rel="noopener" href="mailto:BoomFabrication@gmail.com">BoomFabrication@gmail.com</a></dd>
+        <dt>Shop</dt><dd>201 Sin Nombre Ct NE<br>Albuquerque, NM 87113</dd>
+        <dt>Hours</dt><dd>Mon–Fri 9:00am – 6:30pm<br>Sat–Sun closed</dd>
+        <dd style="grid-column:2;margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="mailto:BoomFabrication@gmail.com?subject=Dyno%20session">Email to book</a></dd>
+      </dl>
+      <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=201+Sin+Nombre+Ct+NE+Albuquerque+NM+87113"><img class="map-img" src="images/25-map-showing-the-shop-at-201.jpg" alt="Map showing the shop at 201 Sin Nombre Ct NE, just west of Edith Blvd NE"><span class="map-cta">Get directions</span></a>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+<nav class="mbar" aria-label="Quick actions">
+  <a target="_blank" rel="noopener" href="tel:5054290613">Call</a>
+  <a href="#contact">Book</a>
+  <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=201+Sin+Nombre+Ct+NE+Albuquerque+NM+87113">Directions</a>
+</nav>
+
+
+<script>
+(function(){
+  var views=['home','services','dyno','shop','dealers','builds','about','contact'];
+  function show(h){
+    if(views.indexOf(h)<0)h='home';
+    views.forEach(function(v){var el=document.getElementById(v==='home'?'home':v+'-view'); if(el)el.classList.toggle('active',v===h);});
+    document.querySelectorAll('.links a').forEach(function(a){ if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');});
+    document.getElementById('links').classList.remove('open');
+    window.scrollTo(0,0);
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a)return;
+    var h=a.getAttribute('href').slice(1); if(views.indexOf(h)<0)return;
+    e.preventDefault(); show(h);
+    try{history.replaceState(null,'','#'+h);}catch(err){}
+  });
+  window.addEventListener('hashchange',function(){show((location.hash||'#home').slice(1));});
+  show((location.hash||'#home').slice(1));
+})();
+</script>
+</body>
+</html>
